@@ -22,31 +22,44 @@ namespace CPDesafio.Repositorios.Repositorios
 
         public async Task<Pessoa> ObterPessoaPorId(int pessoaId)
         {
-            return await _contexto.pessoas.SingleAsync(a => a.Id == pessoaId);
+            return await _contexto.pessoas.FirstOrDefaultAsync(a => a.Id == pessoaId);
         }
-        public List<Pessoa> ObterPessoas()
+        public async Task<List<Pessoa>> ObterPessoas()
         {
-            return _contexto.pessoas.ToList();
+            return await _contexto.pessoas.ToListAsync();
         }
         public void Adicionar(Pessoa pessoa)
         {
             _contexto.Add(pessoa);
         }
-        public void Remover(Pessoa pessoa)
+        public void Remover(int pessoaId)
         {
-            _contexto.Remove(pessoa);
+            var pessoa = _contexto.pessoas.FirstOrDefault(a => a.Id == pessoaId);
+           
+            if (pessoa != null)
+            {
+                pessoa.Ativa = false;
+                _contexto.Entry(pessoa).State = EntityState.Modified;
+                _contexto.SaveChanges();
+            }
+           
+          
         }
 
         public void Atualizar(Pessoa pessoa)
         {
-            _contexto.Update(pessoa);
+
+
+            _contexto.Entry(pessoa).State = EntityState.Modified;
+                _contexto.SaveChanges();
+         
+            
         }
         public void Salvar()
         {
             _contexto.SaveChanges();
+            _contexto.Dispose();
         }
-
-
 
     }
 }

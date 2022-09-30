@@ -34,6 +34,8 @@ namespace CPDesafio
             services.AddDbContext<CPDesafioContexto>();
             services.AddScoped<IPessoaRepositorio, PessoaRepositorio>();
             services.AddScoped<IPessoaServico, PessoaServico>();
+            services.AddScoped<IPessoaTecnologiaRepositorio, PessoaTecnologiaRepositorio>();
+            services.AddScoped<IPessoaTecnologiaServico, PessoaTecnologiaServico>();
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo

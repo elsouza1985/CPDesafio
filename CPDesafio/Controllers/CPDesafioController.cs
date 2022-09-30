@@ -1,4 +1,5 @@
 ﻿using CPDesafio.Modelos.Entidades;
+using CPDesafio.Modelos.Modelos;
 using CPDesafio.Servicos;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -24,36 +25,40 @@ namespace CPDesafio.Api.Controllers
 
         // GET: api/<CPDesafioController>
         [HttpGet]
-        public async Task<Pessoa> GetPessoas()
+        public async Task<List<Pessoa>> GetPessoas()
         {
 
-            return await _pessoaServico.GetPessoa(1);
+            return await _pessoaServico.GetPessoas();
         }
 
         // GET api/<CPDesafioController>/5
         [HttpGet("{id}")]
-        public string GetPessoa(int id)
+        public async Task<Pessoa> GetPessoa(int id)
         {
-
-            return "value";
+            return await _pessoaServico.GetPessoa(id);
         }
 
         // POST api/<CPDesafioController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult Post([FromBody] Pessoa pessoa)
         {
+            _pessoaServico.AdicionarPessoa(pessoa);
+            return Ok();
         }
 
         // PUT api/<CPDesafioController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public ActionResult Put(int id, [FromBody] Pessoa pessoa)
         {
+            _pessoaServico.AtualizarPessoa(pessoa);
+            return Ok();
         }
 
         // DELETE api/<CPDesafioController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            _pessoaServico.RemoverPessoa(id);
         }
     }
 }

@@ -14,5 +14,7 @@ namespace CPDesafio.Modelos.Entidades
 
         [Column]
         public string Nome { get; set; }
+
+        public virtual ICollection<PessoaTecnologia>PessoaTecnologias {get;set;}
     }
 }

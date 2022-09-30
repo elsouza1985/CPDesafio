@@ -13,11 +13,17 @@ namespace CPDesafio.Modelos.Entidades
         [Column("Id")]
         public int Id { get; set; }
 
-        [Column("IdPessoa")]
-        public int IdPessoa { get; set; }
         
-        [Column("IdTecnologia")]
-        public int IdTecnologia { get; set; }
+        [ForeignKey("IdPessoa")]
+        public virtual Pessoa pessoa { get; set; }
+
+        [ForeignKey("IdTecnologia")]
+        public virtual Tecnologia tecnologia { get; set; }
+
+   
+
+
+
 
 
     }

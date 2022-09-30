@@ -16,7 +16,17 @@ namespace CPDesafio.Modelos.Entidades
         public string Nome { get; set; }
 
         [Column]
-        public int Nivel { get; set; }  
+        public int Nivel { get; set; }
+        
+        [Column]
+        public bool Ativa { get; set; }
+
+        [Column]
+        public DateTime DataCriacao { get; set; }
+
+         
+        public virtual ICollection<PessoaTecnologia> TecnologiaList { get; set; }
+      //  public virtual ICollection<Tecnologia> Tecnologias { get; set; }
 
     }
 }

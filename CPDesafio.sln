@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPDesafio.Repositorios", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPDesafio.Servicos", "CPDesafio.Servicos\CPDesafio.Servicos.csproj", "{1B68CE65-C3CA-412E-BF76-01B443A97414}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPDesafio.Test", "CPDesafio.Test\CPDesafio.Test.csproj", "{671E77F2-CBAD-4572-A23C-FFF1700C50B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1B68CE65-C3CA-412E-BF76-01B443A97414}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B68CE65-C3CA-412E-BF76-01B443A97414}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B68CE65-C3CA-412E-BF76-01B443A97414}.Release|Any CPU.Build.0 = Release|Any CPU
+		{671E77F2-CBAD-4572-A23C-FFF1700C50B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{671E77F2-CBAD-4572-A23C-FFF1700C50B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{671E77F2-CBAD-4572-A23C-FFF1700C50B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{671E77F2-CBAD-4572-A23C-FFF1700C50B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
