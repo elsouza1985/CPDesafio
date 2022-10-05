@@ -26,7 +26,6 @@ namespace CPDesafio.Modelos.Entidades
 
          
         public virtual ICollection<PessoaTecnologia> TecnologiaList { get; set; }
-      //  public virtual ICollection<Tecnologia> Tecnologias { get; set; }
-
+    
     }
 }
